@@ -20,7 +20,7 @@ fetch('js/items.json')
          <div class="icons">
             <span><i onclick='addToCart(${product.id} , this)' class="fa-solid fa-cart-plus"></i></span>
             <span><i  onclick='addToHeart(${product.id} , this)'  class="fa-solid fa-heart"></i></span>
-            <span><i  onclick='sharePage(${product.img.value})' class="fa-solid fa-share"></i></span>
+            <span><i  onclick='shareLink(${product.id}, this)' class="fa-solid fa-share"></i></span>
          </div>
          <span class="sale_present">%${presentPrice}</span>
          <div class="img_product">

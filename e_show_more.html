@@ -67,11 +67,6 @@
         </div>
     </div>
 </div>
-    <!-- input search -->
-<div class="search">
-	<input type="search">
-    <i class="fa-solid fa-search"></i>
-</div>
 <!-- login input -->
 <div class="logIn">
         <h2>Login</h2>
@@ -105,22 +100,26 @@
 	</div>
 </div>
 <!-- start header -->
+<!-- start header -->
+<div class="top-header">
+    <p>
+        Sing Up and <strong>Get 20% OFF</strong>
+        for your first order <a href="#">Sign Up Now </a>
+    </p>     
+        <i onclick="uot(10)" class=' close-offer bx bx-x'></i>
+</div>
 <header>
-    <div class="container top-nav">
+    <div class=" top-nav" style="margin: 0 20px;">
         <h2 style="font-family:cursive; font-size:35px; color:rgb(6, 168, 193);">Active</h2>
         <div class="link">
             <ul>
                 <li class="active"><a href="./index.html" >Home</a></li>
-                <li><a href="#">All Products</a></li>
+                <li><a href="./e_show_more.html">All Products</a></li>
                 <li><a href="./e_about.html">About </a></li>
                 <li><a href="./e_contact.html">Contact</a></li>
             </ul>
         </div>
         <div class="cart_header">
-            <div class="other_icons">
-                <i class="fa-solid fa-search"></i>
-                <i class="fa-solid fa-heart"></i>
-            </div>
             <div class="shopping_area">
                 <div onclick="open_cart()"  class="icon_cart">
                     <i class="fa-solid fa-bag-shopping"></i>
@@ -131,13 +130,25 @@
                     <span class="price_cart_head">$0</span>
                 </div>
             </div>
+            <div class="other_icons">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="header_list">
+                <i class='bx bx-list-ul'></i>
+            </div>
         </div>
     </div>
     <nav>
-        <div class="links container">
-            <div class="login_singUp">
-                <a href="./e_login.html">Login</a>
-                <a href="./e_login.html">Sign Up</a>
+        <div class="links">
+            <div class="container">
+                <div class="links_content">
+                    <div class="search_content">
+                        <input type="text">
+                        <i class='bx bx-search'></i>
+                    </div>
+                    
+                    <a href="./e_login.html">LogIn</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -187,21 +198,21 @@
  <div class="company">
     <div class="container">
         <div class="item_content">
-            <img src="./images/company/nike.png" alt="">
+            <img src="./company/nike.png" alt="">
             <div class="item_text">
                 <h2>Adidas</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, tenetur?</p>
             </div>
         </div>
         <div class="item_content">
-            <img src="./images/company/adidas.jpg" alt="">
+            <img src="/company/adidas.jpg" alt="">
             <div class="item_text">
                 <h2>Nike</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, tenetur?</p>
             </div>
         </div>
         <div class="item_content">
-            <img src="./images/company/puma.png" alt="">
+            <img src="./company/puma.png" alt="">
             <div class="item_text">
                 <h2>Poma</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, tenetur?</p>

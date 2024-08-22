@@ -7,8 +7,6 @@
 // fun7 show element as a popup when click it
 // fun8 go to more element page when click banner show more button and replace the product color and number of products of it   
 let cart = document.querySelector('.cart');
-let searchActive = document.querySelector('.searchActive');
-let bxSearch = document.querySelector('.other_icons .fa-search');
 let searchInput = document.querySelector('.search');
 let heartIcon = document.querySelector('.other_icons .fa-heart');
 let hearting = document.querySelector('.hearting');
@@ -19,15 +17,41 @@ let price_cart_head = document.querySelector('.price_cart_head');
 let count_item_cart = document.querySelector('.count_item_cart');
 let price_cart_total = document.querySelector(".price_cart_total");
 
-// Show search filed
-bxSearch.onclick = ()=>{
-    searchInput.classList.toggle('searchActive');
-    hearting.classList.remove('searchActive');
+// top header offer
+let topHeader = document.querySelector('.top-header');
+let headerContent = document.querySelector("header");
+ function uot(countNum){
+    let headOffer = '';
+
+     setInterval(()=>{
+
+        if(countNum > 0){
+            headOffer = `
+        <p>the offer will be hidden after<strong> ${countNum -= 1 } </strong> second</p>     
+        <a href="#">Sign Up Now </a>
+
+        `
+        topHeader.style.background = "#000"
+
+            ;
+        }else{
+           headOffer = `
+        <p>the offer will be hidden after<strong> ${countNum = 0 } </strong> second</p>     
+        <a href="#">Sign Up Now </a>
+    `
+        topHeader.classList.add('hide');
+        headerContent.style.top = -40 + 'px';
+        }
+
+        topHeader.innerHTML = headOffer ; 
+        console.log(countNum);
+        
+    }, 1000)
 }
+
 // Show heart bar
 heartIcon.onclick = ()=>{
     hearting.classList.toggle('searchActive');
-    searchInput.classList.remove('searchActive');
 }
 // open & close cart bar
 function open_cart(){
@@ -36,7 +60,6 @@ function open_cart(){
 function close_cart(){
     cart.classList.remove('active');
 }
-
 // heart bar
 let Hearting = document.querySelector(".hearting ");
 let closeHeart = document.querySelector(".hearting i");
@@ -66,6 +89,7 @@ function addToCart(id , btn){
     getCartItem2();
     // getCartItem3();
     getCartItem();
+    // sharePage();
 }
 // for the top slide has no image
 function getCartItem(){
@@ -186,9 +210,18 @@ function remove_from_cart(index){
 let share_content_input = document.querySelector(".share .theLink input ");
 let share = document.querySelector(".share");
 let closeShare = document.querySelector(".text_content i");
-function sharePage(img){
-    share.classList.add('activeShare');
-    share_content_input.value = img; 
+let shareArray = [];
+function shareLink(id , btn){
+    shareArray.push(all_products_json[id]);
+    btn.classList.add('active');
+    sharePage();
+}
+
+function sharePage(){
+    for(let i = 0; i < shareArray.length ; i++){
+        share.classList.add('activeShare');
+        share_content_input.value = shareArray[i].img.src; 
+    }
 }
 closeShare.onclick = ()=>{
     share.classList.remove('activeShare');
@@ -201,7 +234,6 @@ var array_product = [];
 var heart_content = document.querySelector('.heart-content');
 let removeList = document.querySelector(".head_heart ul");
 let list = document.querySelector(".list");
-
 // bring data item put into heart
 function addToHeart(id , btn){
     array_product.push(all_products_json[id]);
@@ -240,29 +272,6 @@ function removeAll(){
         behavior: 'smooth'
     })
  })
-
-
-
-
-function popupBox(){
-    // let search = document.querySelector(".search");
-    // search.style.display = 'none'
-    //create overlay
-    let overlay = document.createElement("div");
-    // class for overlay
-    overlay.className = "popup-overlay"
-    //add overlay to the body
-    document.body.appendChild(overlay);
-
-    // create popup box
-    let popup_box = document.querySelector("div");
-    popup_box.className = "popup_box"
-    overlay.appendChild(popup_box);
-
-
-}
-popupBox()
-
 
 
 
